@@ -17,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/sidebar.css" />
         <!-- <link rel="stylesheet" type="text/css" href="assets/css/res_sidebar.css" /> -->
-        
+
         <link rel="stylesheet" type="text/css" href="assets/css/accordian.css" />
         <link rel="stylesheet" href="assets/css/owl/owl.carousel.min.css">
         <link rel="stylesheet" href="assets/css/owl/owl.theme.default.min.css">
@@ -106,45 +106,73 @@
                     <div class="col-lg-2 header-img-section">
                         <div class="side-bar active">
                             <div class="menu">
-                                <div class="item"><a href="#"><i class="fas fa-desktop"></i>Profile</a></div>
+                                <div class="item" id="btn_profile"><a href="#"><i class="fas fa-desktop"></i>Profile</a>
+                                </div>
                                 <div class="item">
-                                    <a class="sub-btn"><i class="fas fa-table"></i>Projects<i class="fas fa-angle-right dropdown"></i></a>
+                                    <a class="sub-btn"><i class="fas fa-table"></i>Projects<i
+                                            class="fas fa-angle-right dropdown"></i></a>
                                     <div class="sub-menu">
                                         <a href="#" class="sub-item">Pending</a>
                                         <a href="#" class="sub-item">Sent</a>
                                         <a href="#" class="sub-item">Review</a>
                                     </div>
                                 </div>
-                                <div class="item"><a href="#"><i class="fas fa-th"></i>Purchases</a></div>
+                                <div class="item" id="btn_purchases"><a href="#"><i class="fas fa-th"></i>Purchases</a>
+                                </div>
                                 <div class="item"><a href="#"><i class="fas fa-cogs"></i>Settings</a></div>
-                                
+
                                 <div class="item"><a href="#"><i class="fas fa-info-circle"></i>Logout</a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-10 offset-lg-1 header-title-section">
-                        <!-- <p class="header-subtitle">Multipurpose landing template</p> -->
-                        <h1 class="header-title">Sign in</h1>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Enter email"> <br />
+                </div>
 
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="Password">
-                        </div>
-                        <div>
-                            <a class="" href="#">Forgot Password?</a>
-                            &nbsp; | &nbsp;
-                            <a class="" href="signup.html">Create a new account</a>
-                        </div>
-                        <div class="btn-section learn-more-btn-section">
-                            <a class="nav-link learn-more-btn btn-invert" href="#services">Sign in</a>
+                <!-- PROFILE -->
+                <div class="col-lg-10 offset-lg-1 header-title-section show" id="profile">
+                    <!-- <p class="header-subtitle">Multipurpose landing template</p> -->
+                    <h1 class="header-title">Profile</h1>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email"> <br />
 
-                        </div>
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div>
+                        <a class="" href="#">Forgot Password?</a>
+                        &nbsp; | &nbsp;
+                        <a class="" href="signup.html">Create a new account</a>
+                    </div>
+                    <div class="btn-section learn-more-btn-section">
+                        <a class="nav-link learn-more-btn btn-invert" href="#services">Sign in</a>
 
                     </div>
+
+                </div>
+
+                <!-- PURCHASES -->
+                <div class="col-lg-10 offset-lg-1 header-title-section hide" id="purchases">
+                    <!-- <p class="header-subtitle">Multipurpose landing template</p> -->
+                    <h1 class="header-title">Purchases</h1>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email"> <br />
+
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div>
+                        <a class="" href="#">Forgot Password?</a>
+                        &nbsp; | &nbsp;
+                        <a class="" href="signup.html">Create a new account</a>
+                    </div>
+                    <div class="btn-section learn-more-btn-section">
+                        <a class="nav-link learn-more-btn btn-invert" href="#services">Sign in</a>
+
+                    </div>
+
                 </div>
 
 
@@ -229,21 +257,21 @@
                 $('.side-bar .menu .item').click(function () {
                     // $('.side-bar .menu .item.active').removeClass('active');
                     // $('.side-bar .menu .item .sub-menu .sub-item').removeClass('active');
-                    
-                    $(this).siblings().each(function(i, obj){
+
+                    $(this).siblings().each(function (i, obj) {
                         $(obj).siblings().removeClass('active');
                     })
 
-                    if(!$(this).children('.sub-menu').length > 0){
+                    if (!$(this).children('.sub-menu').length > 0) {
                         $(this).addClass('active');
 
-                         $('.side-bar .menu .item .sub-menu .sub-item').each(function (j, obj1) {
+                        $('.side-bar .menu .item .sub-menu .sub-item').each(function (j, obj1) {
                             $(obj1).removeClass('active');
                         })
                     }
                 });
-                
-                $('.side-bar .menu .item .sub-menu .sub-item').click(function(){
+
+                $('.side-bar .menu .item .sub-menu .sub-item').click(function () {
                     $(this).addClass('active').siblings().removeClass('active');
                 })
             });
